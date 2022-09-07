@@ -27,14 +27,15 @@ namespace Tests
         }
 
         [Test]
-        public void CreatePersonWithNameAndIncorrectIdTest() // Cambiá el nombre para indicar qué estás probando
+        public void CreatePersonWithIncorrectNameAndIncorrectIdTest() // Cambiá el nombre para indicar qué estás probando
         {
             // Configuración
             const string expectedID = null;
-            const string expectedName = "Test Name";
+            const string expectedName = null;
             const string wrongId = "4.753.174-6";
+            const string wrongName = "";
             // Ejecución
-            Person person = new Person(expectedName, wrongId);
+            Person person = new Person(wrongName, wrongId);
             // Comprobación
             Assert.AreEqual(expectedID, person.ID);
             Assert.AreEqual(expectedName, person.Name);
